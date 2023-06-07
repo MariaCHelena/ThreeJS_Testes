@@ -1,5 +1,5 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.118/build/three.module.js';
-
+import {GLTFLoader} from 'https://cdn.jsdelivr.net/npm/three@0.118.1/examples/jsm/loaders/GLTFLoader.js';
 import {OrbitControls} from 'https://cdn.jsdelivr.net/npm/three@0.118/examples/jsm/controls/OrbitControls.js';
 
 class BasicWorldDemo {
@@ -73,7 +73,19 @@ class BasicWorldDemo {
       plane.rotation.x = -Math.PI / 2;
       this._scene.add(plane);
 
+      const loade = new GLTFLoader();
+
       this._RAF();
+  }
+
+  _LoadModel() {
+    const loader = new GLTFLoader();
+    loader.load('./scene.gltf', (gltf) => {
+      gltf.scene.traverse(c => {
+        c.castShadow = true;
+      });
+      this._scene.add(glb.scene);
+    })
   }
 
   _RAF() {

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Kirara
+* source:	https://sketchfab.com/3d-models/kirara-7acc05e7cce14a1ab1e807a35e7e97d9
+* author:	HoYoverse (https://sketchfab.com/HoYoverse)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Kirara" (https://sketchfab.com/3d-models/kirara-7acc05e7cce14a1ab1e807a35e7e97d9) by HoYoverse (https://sketchfab.com/HoYoverse) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

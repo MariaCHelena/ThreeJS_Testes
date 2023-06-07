@@ -52,16 +52,16 @@ class BasicWorldDemo {
       controls.target.set(0, 20, 0);
       controls.update();
 
-      const loader = new THREE.CubeTextureLoader();
-      const texture = loader.load([
-          './resources/posx.jpg',
-          './resources/negx.jpg',
-          './resources/posy.jpg',
-          './resources/negy.jpg',
-          './resources/posz.jpg',
-          './resources/negz.jpg',
-      ]);
-      this._scene.background = texture;
+        const loader = new THREE.CubeTextureLoader();
+        const texture = loader.load([
+            './resources/posx.jpg',
+            './resources/negx.jpg',
+            './resources/posy.jpg',
+            './resources/negy.jpg',
+            './resources/posz.jpg',
+            './resources/negz.jpg',
+        ]);
+        this._scene.background = texture;
 
       const plane = new THREE.Mesh(
         new THREE.PlaneGeometry(100, 100, 1, 10),
@@ -73,19 +73,25 @@ class BasicWorldDemo {
       plane.rotation.x = -Math.PI / 2;
       this._scene.add(plane);
 
-      const loade = new GLTFLoader();
+      this._LoadModel();
 
       this._RAF();
   }
 
   _LoadModel() {
     const loader = new GLTFLoader();
-    loader.load('./scene.gltf', (gltf) => {
-      gltf.scene.traverse(c => {
-        c.castShadow = true;
-      });
-      this._scene.add(glb.scene);
-    })
+      loader.setPath('./resources/kirara/')
+      loader.load('scene.gltf', (gltf) => {
+        gltf.scene.traverse(c => {
+            c.castShadow = true;
+        });
+        gltf.scene.scale.set(200, 200, 200)
+        this._scene.add(gltf.scene);
+      }, function(xhr){
+        console.log((xhr.loaded/xhr.total * 100) + "% loaded")
+      }, function(error){
+        console.log(error)
+      })
   }
 
   _RAF() {

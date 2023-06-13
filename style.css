@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: plum;
+}
+
+canvas{
+  display: block;
+  margin: 10vh auto;
+  border-radius: 50%;
+  color: #add8e6;
+}
+
+.principal{
+  width: 50vw;
+  display: block;
+  margin: auto;
+}
+

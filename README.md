@@ -1,7 +1,13 @@
 # Estudos em Three.Js
+
+
 Este repositório foi criado com o intuito de documentar meus estudos realizados no Three.Js para o desenvolvimento do projeto "Girls Just Wanna Have Fun" da Orc'Estra Gamificação
 
 O principal objetivo da primeira sprint é a de estudar a biblioteca Three.js, aprender a implementar modelagens 3D, bem como implementar um fundo dinâmico e animações, além de criar uma trilha de desenvolvimento do projeto para as próximas sprints.
+
+## Fazer o objeto 3D aparecer em somente uma seção do site
+
+Essa branch tem como objetivo testar a funcionalidade de mostrar um objeto 3D em apenas uma parte do site :D
 
 Até dado momento, meus estudos foram direcionados a implementar a biblioteca preparando um ambiente de desenvolvimento. Tendo isso em vista, pude chegar a duas opções de ambientes para desenvolver o projeto:
 

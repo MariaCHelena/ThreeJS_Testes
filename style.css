@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: plum;
+}
+
+canvas{
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.principal{
+  width: 50vw;
+  display: block;
+  margin: 0 auto;
+}

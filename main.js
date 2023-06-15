@@ -1,5 +1,5 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.118/build/three.module.js';
-import {GLTFLoader} from 'https://cdn.jsdelivr.net/npm/three@0.118.1/examples/jsm/loaders/GLTFLoader.js';
+import {FBXLoader} from 'https://cdn.jsdelivr.net/npm/three@0.118.1/examples/jsm/loaders/FBXLoader.js';
 
 const canva = document.querySelector('.webgl')
 
@@ -21,8 +21,7 @@ scene.add(mesh);
 
 
 const camera = new THREE.PerspectiveCamera(75, sizes.width/sizes.height);
-camera.position.z = 5;
-camera.position.y = 3.5;
+camera.position.z = 2;
 scene.add(camera);
 
 const light = new THREE.AmbientLight( 0x404040 ); // soft white light
@@ -31,18 +30,17 @@ scene.add( light );
 
 const renderer = new THREE.WebGLRenderer({canvas: canva, alpha: true});
 renderer.setSize(sizes.width, sizes.height);
-const loader = new GLTFLoader();
+const loader = new FBXLoader();
 
 loader.load(
-    './munchkin_cat.glb',
-    (glb) => {
-        console.log(glb)
-        const root = glb.scene;
-        root.scale.set(3.5, 3.5, 3.5);
-        scene.add(root)
+    './toon-cat-free/source/cat.fbx',
+    (fbx) => {
+        console.log(fbx)
+        fbx.scale.multiplyScalar(0.002);
+        scene.add(fbx)
 
-        const mixer = new THREE.AnimationMixer(root);
-        const animations = glb.animations;
+        const mixer = new THREE.AnimationMixer(fbx);
+        const animations = fbx.animations;
         const animationActions = {};
 
         animations.forEach((animation) => {
